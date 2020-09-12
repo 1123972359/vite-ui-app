@@ -1,6 +1,6 @@
 <template>
   <top-nav></top-nav>
-  <div>doc</div>
+  <div class="doc">doc</div>
   <aside class="aside" v-show="asideVisible">
     <span>内容1</span>
     <span>内容2</span>
@@ -27,30 +27,33 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.doc
+  font-size: .16rem
 .aside
-    width: 200px
-    height: calc(100% - 70px)
-    overflow: auto
-    position: absolute
-    left: 0
-    top: 70px
-    background: lightblue
-    display: flex
-    flex-direction: column
+  width: 2rem
+  height: calc(100% - .7rem)
+  overflow: auto
+  position: absolute
+  left: 0
+  top: .7rem
+  background: lightblue
+  display: flex
+  flex-direction: column
+  box-sizing: border-box
+  font-size: .16rem
+  span
+    display: block
+    width: 100%
+    height: .5rem
+    line-height: .5rem
+    padding-left: .1rem
     box-sizing: border-box
-    span
-        display: block
-        width: 100%
-        height: 50px
-        line-height: 50px
-        padding-left: 10px
-        box-sizing: border-box
-        cursor: pointer
-        user-select: none
-        &:hover
-            color: #fff
-            background: blue
-            opacity: .4
-        &:active
-            opacity: 1
+    cursor: pointer
+    user-select: none
+    &:hover
+      color: #fff
+      background: blue
+      opacity: .4
+      &:active
+        opacity: 1
 </style>

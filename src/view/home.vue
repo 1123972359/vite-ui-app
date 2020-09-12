@@ -1,6 +1,6 @@
 <template>
   <top-nav></top-nav>
-  <div>home</div>
+  <div class="home">home</div>
 </template>
 
 <script lang="ts">
@@ -12,3 +12,8 @@ export default {
   },
 };
 </script>
+
+<style lang="sass" scoped>
+.home
+  font-size: .16rem
+</style>
