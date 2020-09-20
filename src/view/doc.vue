@@ -1,11 +1,11 @@
 <template>
   <top-nav></top-nav>
-  <div class="doc">doc</div>
+  <div class="doc">
+    <router-view></router-view>
+  </div>
   <aside class="aside" v-show="asideVisible">
-    <span>内容1</span>
-    <span>内容2</span>
-    <span>内容3</span>
-    <span>内容4</span>
+    <router-link to="/doc">doc</router-link>
+    <router-link to="/doc/switch">switch</router-link>
   </aside>
 </template>
 
@@ -20,7 +20,6 @@ export default {
   },
   setup() {
     const asideVisible = inject<Ref<boolean>>("asideVisible");
-    console.log("asideVisible", asideVisible.value);
     return { asideVisible };
   },
 };
@@ -29,6 +28,12 @@ export default {
 <style lang="sass" scoped>
 .doc
   font-size: .16rem
+  margin-left: 2rem
+  padding: .1rem
+  background: lightyellow
+  height: calc(100vh - .7rem)
+  overflow: auto
+  box-sizing: border-box
 .aside
   width: 2rem
   height: calc(100% - .7rem)
@@ -36,12 +41,12 @@ export default {
   position: absolute
   left: 0
   top: .7rem
-  background: lightblue
+  background: #ccc
   display: flex
   flex-direction: column
   box-sizing: border-box
   font-size: .16rem
-  span
+  a
     display: block
     width: 100%
     height: .5rem
@@ -50,10 +55,15 @@ export default {
     box-sizing: border-box
     cursor: pointer
     user-select: none
+    text-decoration: none
+    color: #000
     &:hover
       color: #fff
       background: blue
       opacity: .4
       &:active
         opacity: 1
+@media (max-width: 500px)
+  .doc
+    margin-left: 0
 </style>

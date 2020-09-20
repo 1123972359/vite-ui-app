@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts">
-import topNav from "../components/topNav.vue";
+import topNav from "./../components/topNav.vue";
 export default {
   name: "home",
   components: {
